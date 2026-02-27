@@ -34,7 +34,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='https://drive.google.com/file/d/1--wdrWWHWIcBGUKmg7GcKvCDqw6iYKcv/view?usp=sharing' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<video src='https://drive.google.com/file/d/1--wdrWWHWIcBGUKmg7GcKvCDqw6iYKcv/view?usp=sharing' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- I used QuickTime Player -->
 GIF created with ...  
