@@ -106,3 +106,61 @@ html {
   background-repeat: repeat;
   background-size: 325px 300px;
 }
+
+.feedback {
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+.form-input.correct {
+  background-color: green;
+  border: 2px solid green;
+} 
+
+.form-input.incorrect {
+  background-color: red;
+  border: 2px solid red;
+}
+
+
+.guess-form {
+  margin-top: 20px;
+}
+
+.form-input {
+  padding: 10px;
+  font-size: 1rem;
+  width: 200px;
+  margin-right: 10px;
+}
+
+.yellowLabel {
+  color: yellow;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+.blackButtonSubmit{
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.blackBackwardbutton:disabled,
+.blackfowardbutton:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.blackButtonShuffle{
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
