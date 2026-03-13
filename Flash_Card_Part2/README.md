@@ -4,7 +4,7 @@ Submitted by: **Jamar Brown**
 
 This web app: **Flash Card shuffle about react questions**
 
-Time spent: **4.5** hours spent in total
+Time spent: **5** hours spent in total
 
 ## Required Features
 
@@ -45,10 +45,10 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+https://drive.google.com/file/d/1ACG4sHC-cWxdy53BCYzZtTJ5ypMBO5XZ/view?usp=sharing
 
-<!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
+<!-- QuickTime Player -->
+ 
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -58,9 +58,10 @@ GIF created with ...
 
 Describe any challenges encountered while building the app.
 
+The main functionality took me 3 hours and 45 mintues the shuffle button took longer because I had to go and modify the code inorder to make it work.
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2026] [Jamar Brown]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
