@@ -44,7 +44,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-https://drive.google.com/file/d/1JrZwLAvQlLp-DubeVN34oUZY-zRRHgt7/view?usp=sharing
+https://drive.google.com/file/d/1DmZ9IcWYCCLeMPZ7_oVSDlQzisXDS5gF/view?usp=sharing
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with QuickTimePlayer Macbook
