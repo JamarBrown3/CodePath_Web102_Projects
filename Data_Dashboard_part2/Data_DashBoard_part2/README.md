@@ -50,6 +50,27 @@ QuickTimePlayer macOS
 
 Describe any challenges encountered while building the app.
 
+* Understanding how React Router works, especially how routes update only part of the page using Outlet
+* Debugging route mismatches between Link paths and defined routes (e.g., /breweries/:id vs /breweryDetails/:id)
+* Learning how to use the useParams() hook to extract dynamic URL parameters
+* Passing dynamic data (IDs) correctly between components (DetailRow → BreweryDetails)
+* Fixing issues with API fetching using dynamic parameters
+* Avoiding infinite re-renders and React warnings caused by calling setState inside useEffect
+* Refactoring code to use derived state with useMemo instead of redundant state variables
+* Debugging why UI elements (like the table layout) were breaking despite data rendering correctly
+* Fixing CSS conflicts and layout issues, especially with reusable class names like .List
+* Troubleshooting why navigation links were leading to 404 pages
+* Understanding how hash navigation (/#search) behaves in React Router
+* Handling the case where navigation doesn’t trigger when already on the same route (/)
+* Implementing a working solution to focus the search bar programmatically
+* Debugging missing or deleted elements (e.g., missing id="search")
+* Ensuring "View Details" links correctly navigate and load data
+* Structuring components properly to separate layout, data fetching, and detail views
+* Understanding how React apps re-render dynamically without page reloads
+* Learning how to properly integrate and structure a NotFound (*) fallback route
+
+**These challenges helped deepen my understanding of React’s component architecture, client-side routing, and dynamic data handling in modern web applications.**
+
 ## License
 
     Copyright [2026] [Jamar Brown]
