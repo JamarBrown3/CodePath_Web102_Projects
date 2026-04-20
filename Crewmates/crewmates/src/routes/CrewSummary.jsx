@@ -33,6 +33,8 @@ const CrewSummary = () => {
             />
             <h3>Class: {crewMember.class}</h3>
             <h4>Level: {crewMember.level}</h4>
+            <h3>Mana: {crewMember.level * 10}</h3>
+            <h3>Health: {crewMember.level * 20}</h3>
 
             <Link to={'/edit/' + crewMember.id} className="editLink">
                 Edit Crewmate ✏️
