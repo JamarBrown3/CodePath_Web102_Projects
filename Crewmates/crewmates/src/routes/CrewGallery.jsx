@@ -28,7 +28,7 @@ const CrewGallery = () => {
                             key={member.id}
                             id={member.id}
                             name={member.name}
-                            class={member.class}
+                           class={member.class}
                             level={member.level}
                             image={member.image}
                         />
