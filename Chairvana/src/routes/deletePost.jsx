@@ -47,7 +47,7 @@ function DeletePost() {
     return (
         <div className="create-page-wrapper">
             <img
-                src='../../public/chair-bg.mp4.gif' // Just use the name, no 'public/' needed
+                src='/chair-melting.gif' // Just use the name, no 'public/' needed
                 alt="background"
                 className="bg-gif"
             />
