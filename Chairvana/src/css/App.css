@@ -21,12 +21,18 @@ body {
     line-height: 1.6;
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 /* --- LAYOUT --- */
 #main {
     width: 100%;
     margin: 0 auto 50px auto;
     background: tan;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 
@@ -358,15 +364,6 @@ h3 {
 }
 
 /* This creates the 3-column grid for your chairs */
-.posts-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 40px;
-    padding: 40px 20px;
-    width: 100%;
-    align-items: stretch; /* 👈 makes all cards in a row the same height */
-}
 
 .post-image-container {
     height: 220px; /* Fixed height so cards don't jump around */
@@ -634,6 +631,50 @@ h3 {
         align-items: center; 
         text-align: center;
         width: 100%;
+    }
+
+    .posts-grid {
+        grid-template-columns: 1fr;
+        padding: 20px 10px;
+        gap: 20px;
+    }
+
+    .sort-container {
+        flex-wrap: wrap; /* 👈 stops sort buttons from overflowing */
+        padding: 0 10px;
+    }
+
+    .search-input {
+        width: 100%; /* 👈 full width on mobile */
+    }
+
+    #content, .wrapper-feed, .posts-container {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .post-card {
+        width: 90%;
+        max-width: 400px;
+        margin: 10px auto;
+    }
+
+    #header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    #buttons {
+        justify-content: center;
+        flex-wrap: wrap; /* 👈 stops nav buttons overflowing */
+        width: 100%;
+    }
+
+    .but {
+        font-size: 12px;
+        padding: 8px 12px;
     }
 
     /* This ensures each card takes up most of the screen and stays centered */
