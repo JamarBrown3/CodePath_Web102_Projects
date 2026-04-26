@@ -1,0 +1,672 @@
+/* Merged Stylesheet for HobbyHub: Chair & Wheelchair Forum
+   Combines Metamorphosis Design + Nivo Slider 
+*/
+
+/* --- GLOBAL RESETS --- */
+* {
+    border: 0;
+    margin: 0;
+    box-sizing: border-box; /* Makes padding easier to manage */
+}
+
+img {
+    max-width: 100%; /* Ensures gaming/chair images don't overflow */
+    height: auto;
+}
+
+body {
+    font: 14px Arial, Helvetica, sans-serif;
+    color: #333333;
+    background: #000000; /* Dark background for that gamer/pro aesthetic */
+    line-height: 1.6;
+}
+
+/* --- LAYOUT --- */
+#main {
+    width: 100%;
+    margin: 0 auto 50px auto;
+    background: tan;
+    min-height: 100vh;
+}
+
+
+#header { 
+    height: auto;
+    padding: 20px;
+    background: #2c003e; /* Deep Purple Header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo h2 {
+    color: #ffffff;
+    font-size: 24px;
+    font-style: italic;
+}
+
+#logo a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* --- NAVIGATION --- */
+#buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.but {
+    padding: 10px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    background: #8e44ad; /* Main Purple Action Color */
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.but:hover {
+    background: #9b59b6;
+}
+
+/* --- CONTENT AREA --- */
+#content {
+    display: flex; /* Modern Flexbox instead of floats */
+    padding: 20px;
+    gap: 20px;
+}
+
+#left {
+    flex: 2;
+}
+
+#right {
+    flex: 1;
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* --- TYPOGRAPHY (The Purple Theme) --- */
+h1 {
+    font-size: 20px;
+    color: #ffffff;
+    background: #6a0dad; /* Deep Purple for Section Headers */
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 18px;
+    color: #6a0dad;
+    border-bottom: 2px solid #6a0dad;
+    padding-bottom: 5px;
+    margin-top: 10px;
+}
+
+h3 {
+    color: #8e44ad;
+    margin-bottom: 10px;
+}
+
+.read {
+    color: #8e44ad;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* --- FOOTER --- */
+#footer {
+    padding: 30px;
+    background: #2c003e;
+    color: #ffffff;
+    text-align: center;
+}
+
+#footer a { color: #d1a3ff; }
+
+/* Container MUST be overflow hidden to clip the rotating image */
+.post-image-container {
+  width: 100%;
+  overflow: hidden;           /* ← clips anything rotating outside */
+  border-radius: 8px;         /* optional, matches card styling */
+  background: #000;           /* fills the gap when image is scaled down */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image starts at scale(0.7) so its diagonal fits the container at any rotation angle */
+.post-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: rotate(0deg) scale(0.7);   /* ← default resting state */
+  transform-origin: center center;
+}
+
+/* Animation */
+.post-image.animating {
+  animation: nivoMasterSequence 12s ease-in-out forwards;
+}
+
+.main-page-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.bg-gif-fixed {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+#content {
+    position: relative;
+    z-index: 1;
+    background: transparent;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Always exactly 3 equal columns */
+    gap: 40px;
+    padding: 40px 20px;
+    width: 100%;
+}
+
+.post-card {
+    background: #cd83e6;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(106, 13, 173, 0.3);
+    display: flex;
+    flex-direction: column;
+    /* No width or min-width needed — grid handles sizing */
+}
+
+@keyframes nivoMasterSequence {
+  0%   { clip-path: inset(0 0 0 0);    opacity: 1; transform: rotate(0deg)   scale(0.7);  }
+  8%   { clip-path: inset(0 0 0 100%); opacity: 0; transform: rotate(0deg)   scale(0.65); }
+  18%  { clip-path: inset(0 0 0 0);    opacity: 1; transform: rotate(90deg)  scale(0.7);  }
+  28%  { clip-path: inset(100% 0 0 0); opacity: 0; transform: rotate(90deg)  scale(0.65); }
+  40%  { clip-path: inset(0 0 0 0);    opacity: 1; transform: rotate(180deg) scale(0.7);  }
+  50%  { clip-path: inset(0 100% 0 0); opacity: 0; transform: rotate(180deg) scale(0.65); }
+  62%  { clip-path: inset(0 0 0 0);    opacity: 1; transform: rotate(270deg) scale(0.7);  }
+  72%  { clip-path: inset(0 0 100% 0); opacity: 0; transform: rotate(270deg) scale(0.65); }
+  85%  { clip-path: inset(0 0 0 0);    opacity: 1; transform: rotate(360deg) scale(0.7);  }
+  100% { clip-path: inset(0 0 0 0);    opacity: 1; transform: rotate(360deg) scale(0.7);  }
+}
+
+/* --- ADDITIONAL UTILITY CLASSES --- */
+
+.tagline {
+    color: #d1a3ff;
+    font-size: 12px;
+}
+
+.form-container {
+    background: #f9f0ff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid #d1a3ff;
+}
+
+.form-container h2.form-title {
+    border: none;
+    margin-top: 0;
+    text-align: center; /* Keeps it centered as per your mobile goal */
+}
+
+.custom-input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+}
+
+.textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background: #6a0dad;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background: #8e44ad;
+}
+
+.sort-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.small-btn {
+    background: #eee;
+    border: 1px solid #ccc;
+    padding: 4px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-image {
+    width: 100%;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+.view-comments-btn {
+    margin-top: 10px;
+    background: none;
+    border: none;
+    padding: 0;
+    color: #8e44ad;
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.stats-box {
+    padding: 15px;
+    line-height: 2;
+}
+
+.vote-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.vote-btn {
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.vote-btn.like:hover {
+    background: #e1fdec; /* Slight green tint */
+}
+
+.vote-btn.dislike:hover {
+    background: #fde1e1; /* Slight red tint */
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+.net-score {
+    font-weight: bold;
+    color: #6a0dad;
+}
+
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap-reverse;
+}
+
+/* This makes the feed take up the full width available */
+.wrapper-feed {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* This creates the 3-column grid for your chairs */
+.posts-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 40px;
+    padding: 40px 20px;
+    width: 100%;
+    align-items: stretch; /* 👈 makes all cards in a row the same height */
+}
+
+.post-image-container {
+    height: 220px; /* Fixed height so cards don't jump around */
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    background: #cf4607;
+}
+
+.post-description {
+    flex-grow: 1; /* 👈 description takes up remaining space, pushing footer down */
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+.post-footer {
+    margin-top: auto; /* 👈 this is the key — pushes link to bottom */
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+/* Ensure images don't break the box */
+.post-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.green-btn{
+    background: #d1a3ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.update-post-form {
+    background: #f9f0ff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid #d1a3ff;
+    /* Tweak 1: Add depth */
+    box-shadow: 0 4px 10px rgba(106, 13, 173, 0.1); 
+    /* Tweak 2: If you toggle this visibility with React */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Optional: Make the title inside look like your other forms */
+.update-post-form h1 {
+    border: none;
+    margin-top: 0;
+    color: #6a0dad;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.create-page-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+    overflow: hidden; /* Clips the GIF so it doesn't spill out */
+    background: #000; /* Fallback in case GIF fails */
+}
+
+.bg-gif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Makes the smiling chairs fill the screen */
+    z-index: 1;
+    opacity: 0.5; /* Keeps the GIF aesthetic but makes the form readable */
+    
+}
+
+.form-container {
+    position: relative;
+    z-index: 2; /* Puts form ABOVE the chairs */
+    background: rgba(249, 240, 255, 0.95); /* Slight transparency for the glass look */
+    backdrop-filter: blur(5px);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #d1a3ff;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.hr_look {
+    border: 1px dashed #d1a3ff;
+    margin: 15px 0;
+}
+
+.for-title {
+    color: #ff4d4d;
+    font-size: 18px;
+    text-align: center;
+}
+
+.paragraph_style {
+    text-Align: center;
+     margin-Bottom: '20px';
+}
+
+.delete-btn {
+    background-Color: #ff4d4d;
+    border: 'none';
+    color: white;
+    font-weight: bold;
+}
+
+.post-card .view-comments-btn {
+    color: #ac25ac; /* Magenta */
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.post-card .view-comments-btn:hover {
+    color: #00ff7f; /* Spring Green */
+    text-decoration: none;
+}
+
+.vote-btn.like {
+    background: #d1a3ff;
+    color: #6a0dad;
+}
+.vote-btn.dislike {
+    background: #ff4d4d;
+    color: #6a0dad;
+}
+
+/* comment section code */
+
+.feed-comment-section {
+    margin-top: auto; /* Pushes the comment box to the bottom area */
+    padding-top: 10px;
+    border-top: 1px dashed #d1a3ff;
+}
+
+.feed-comment-input {
+    width: 100%;
+    padding: 8px;
+    background: rgba(229, 181, 9, 0.7);
+    color:#4407c7;
+    border: 1px solid #6a0dad;
+    border-radius: 4px;
+    font-size: 12px;
+    outline: none;
+}
+
+.feed-comment-input:focus {
+    background: #fff;
+    border-color: #ff00ff; /* Glow when typing */
+}
+
+.latest-comment {
+    font-size: 11px;
+    color: #444;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.user-comment-input{
+    display: flex;
+    gap: 5px;
+}
+
+.comment-submit-btn {
+    background-color: #6a0dad; /* Deep Purple to match your headers */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 0 15px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for the hover effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* The hover state */
+.comment-submit-btn:hover {
+    background-color: #8e44ad; /* Lighter purple on hover */
+    box-shadow: 0 2px 8px rgba(106, 13, 173, 0.4); /* Subtle glow effect */
+    transform: translateY(-1px); /* Slight lift effect */
+}
+
+/* Active state (when clicking) */
+.comment-submit-btn:active {
+    transform: translateY(0);
+    background-color: #2c003e; /* Darkens slightly when pressed */
+}
+
+.active-sort {
+    background: #6a0dad;
+    color: white;
+    border-color: #6a0dad;
+}
+
+.search-input {
+    width: 300px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.sort-label {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.sort-btn {
+    background: #2c003e;
+    color: #d1a3ff;
+    border: 1px solid #6a0dad;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background 0.2s;
+}
+
+.sort-btn:hover {
+    background: #4a0070;
+}
+
+.sort-btn--active {
+    background: #6a0dad;
+    color: #ffffff;
+    border-color: #9b59b6;
+}
+
+.results-count {
+    color: #fc5f34ca;
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-style: bold;
+}
+
+.no-results {
+    color: #ffffff;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 800px) {
+    /* This centers the entire column of content */
+    #content, .wrapper-feed, .posts-container {
+        align-items: center; 
+        text-align: center;
+        width: 100%;
+    }
+
+    /* This ensures each card takes up most of the screen and stays centered */
+    .post-card {
+        width: 90%; 
+        max-width: 400px;
+        margin: 10px auto; /* Centers the card box itself */
+    }
+
+    /* Centers the text inside the cards for a balanced mobile look */
+    .post-header, .post-footer {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    #left, #right {
+        width: 100%; /* Makes both sections take up the full screen width */
+        flex: none;
+    }
+
+    #header {
+        flex-direction: column; /* Moves the logo above the buttons */
+        text-align: center;
+        gap: 15px;
+    }
+
+    #buttons {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .but {
+        font-size: 12px; /* Smaller buttons for smaller thumbs */
+        padding: 8px 12px;
+    }
+  }
